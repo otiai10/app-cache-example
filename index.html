@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            window.onload = function() {
+                var message = "";
+                if (window.caches && window.caches.constructor) {
+                    message += "DETECTED: " + window.caches.constructor.name + "\n";
+                } else {
+                    message += window.caches;
+                }
+                for (var key in window.caches) {
+                    message += key + "\n";
+                }
+                const output = document.getElementById("output");
+                output.innerText = message;
+                // window.alert(message);
+            };
+        </script>
+    </head>
+    <body>
+        <h1>App Cache Example</h1>
+        <pre id="output"></pre>
+    </body>
+</html>
